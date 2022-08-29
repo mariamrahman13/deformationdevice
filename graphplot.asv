@@ -1,0 +1,8 @@
+data = readtable("cellparams-6-13-7.xls");
+totalrow = height(data);
+datapoint = data.Track(2);
+count = 1;
+for pointer = 2:totalrow
+    if data.Track(pointer) = datapoint
+        x = count;
+        y = 

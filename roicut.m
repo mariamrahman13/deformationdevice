@@ -1,8 +1,9 @@
 function [roi_image] = roicut(bin_image, x_coord)
     imshow(bin_image);
+
     y_coord = 5;
     x_width = 250;
-    y_width = 90;
+    y_width = 100;
 
     ROI = drawrectangle('Position', [x_coord, y_coord, x_width, y_width]);
     mask = ROI.createMask;

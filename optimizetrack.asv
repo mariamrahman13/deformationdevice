@@ -1,0 +1,21 @@
+tic
+imageid = "27418_1_102.tif";
+base = 37;
+track = 1;
+size = [10 6];
+emptyarray = zeros(size);
+totaltable = array2table(emptyarray, "VariableNames", {'Area', 'Circularity', 'Perimeter', 'Deformation', 'Index', 'Track'})
+centroid = [0, 0]l
+for x = 0:height(totaltable)
+    totaltable.Centroid(x, :) = centroid;
+end
+rowindex = 0;
+for index = 1:150
+    track = index;
+    table = celltrack(imageid, index, base, track);
+    tableheight = height(table);
+    totaltable([rowindex tableheight], :) = table;
+    rowindex = rowindex + 1 + tableheight;
+end
+writetable(totaltable, 'cellparams-6-13-8.xls');
+toc
